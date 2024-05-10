@@ -1,0 +1,28 @@
+<!DOCTYPE html> <!-- Declaració del tipus de document -->
+<html lang="en"> <!-- Etiqueta HTML principal amb especificació de l'idioma (anglès) -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Especificació de la codificació de caràcters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuració de la visualització en dispositius mòbils -->
+    <title>Lluvia de estrellas</title> <!-- Títol de la pàgina -->
+    <link rel="stylesheet" href="CSS-Estrellafugaz.css"> <!-- Enllaç al fitxer CSS per a l'animació de les estrelles fugaces -->
+    <link rel="stylesheet" href="CSS-Settings.css"> <!-- Enllaç al fitxer CSS per a la configuració general -->
+</head>
+
+<body translate="no"> <!-- Cos del document amb l'atribut "translate" desactivat -->
+
+    <h1> ATNIMO </h1> <!-- Encapçalament principal de la pàgina -->
+
+    <div class="night"> <!-- Divisió que representa la nit amb l'animació d'estrelles -->
+        <!-- Divisions per a les estrelles fugaces -->
+        <div class="shooting_star"></div>
+        <div class="shooting_star"></div>
+        <!-- Més estrelles fugaces... -->
+    </div>
+
+    <a href="03.PaginaUsuario.html"> <!-- Enllaç cap a la pàgina de l'usuari -->
+        <img src="C:\Users\Jun\Pictures\Screenshots\Nueva carpeta\Search-512.webp" width="200" height="200"> <!-- Imatge que serveix com a botó per a la pàgina de l'usuari -->
+    </a>
+
+</body>
+</html>
