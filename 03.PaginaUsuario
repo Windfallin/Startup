@@ -1,0 +1,20 @@
+<!DOCTYPE html> <!-- Declaració del tipus de document -->
+<html>
+    <head>
+        <meta charset="UTF-8"> <!-- Especificació de la codificació de caràcters -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuració de la visualització en dispositius mòbils -->
+        <script src="JavaFraseMoti.js"></script> <!-- Enllaç al fitxer JavaScript per a la generació de frases motivacionals -->
+        <link rel="stylesheet" href="CSS-Settingschat.css"> <!-- Enllaç al fitxer CSS per a la configuració general del xat -->
+    </head>
+    <body>
+        <div class="container"> <!-- Contenidor principal -->
+            <div class="tit">Who are you this time?</div> <br> <!-- Títol del formulari -->
+            <input type="text" placeholder="Name"> <br> <!-- Camp d'entrada per al nom de l'usuari -->
+            
+            <a href="04.Transition.html"> <!-- Enllaç cap a la següent pàgina -->
+                <button >Match</button> <!-- Botó per a iniciar la següent acció -->
+            </a> <br>
+            <span id='motivation'></span> <br> <!-- Espai per a la visualització de la frase motivacional generada per JavaScript -->
+        </div>
+    </body>
+</html>
