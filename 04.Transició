@@ -1,0 +1,44 @@
+<!DOCTYPE html> <!-- Declaració del tipus de document -->
+<html>
+<head>
+    <meta charset="UTF-8"> <!-- Codificació de caràcters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuració de la visualització en dispositius mòbils -->
+    <style>
+        body {
+            height: 100vh; /* Alçada del cos de la pàgina al 100% de la finestra visible */
+            margin: 0; /* Marge exterior */
+            display: flex; /* Estil d'exhibició flex */
+            justify-content: center; /* Centrat horitzontalment */
+            align-items: center; /* Centrat verticalment */
+            background-color: #f0f0f0; /* Color de fons inicial */
+            transition: background-color 0.5s ease; /* Transició suau entre canvis de color de fons */
+        }
+    </style>
+</head>
+<body onmousemove="cambiarFondo(event)"> <!-- Esdeveniment d'acció quan el ratolí es mou -->
+    <script>
+        function cambiarFondo(event) {
+            // Obtenir la posició del ratolí
+            var mouseX = event.clientX;
+            var mouseY = event.clientY;
+
+            // Calcular els valors de color basats en la posició del ratolí
+            var red = mouseX % 255;
+            var green = mouseY % 255;
+            var blue = (mouseX + mouseY) % 255;
+
+            // Convertir els valors de color al format hexadecimal
+            var colorHex = "#" + red.toString(16) + green.toString(16) + blue.toString(16);
+
+            // Canviar el color de fons del cos de la pàgina
+            document.body.style.backgroundColor = colorHex;
+
+            // Iniciar un temporitzador després de 3 segons
+            setTimeout(function() {
+                // Redirigir a una altra pàgina
+                window.location.href = "05.PaginaChat.html";
+            }, 3000); // 3000 milisegons = 3 segons
+        }
+    </script>
+</body>
+</html>
