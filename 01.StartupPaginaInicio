@@ -1,111 +1,116 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <title> ATNIMO </title> <!-- Títol de la pàgina -->
-    <meta charset="UTF-8"> <!-- Codificació del caràcter -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuració de la vista en determinats tipus de dispositius -->
-    <link rel="stylesheet" href="CSS-Settings.css"> <!-- Enllaçament a fitxers externs (en aquest cas CSS) -->
-    <style> 
-    /* Estil de CSS intern */
-        *{ /* Font per a tots els elements */
-            font-family: 'Courier New', Courier, monospace; /* Tipus de lletra */
-            color: black; /* Color de text */
-            margin: 0; /* Marge */
-            padding: 0; /* Espaiat interior */
-        }
-        body{
-            background-image: linear-gradient(135deg, #a2a2a2, #e9e9e9, #526b6b, #81a1a1, #969696, #433141, #738181, #c0d3d3, #dcfefe, #c2c6c6, #ffffff); /* Imatge de fons */
-            background-size: 500%; /* Mida de la imatge de fons */
-            animation: animacion 5s; /* Animació del fons */
-            display: flex; /* Configuració de visualització en flexbox */
-            align-items: center; /* Alineació vertical al centre */
-            justify-content: center; /* Alineació horitzontal al centre */
-        }
-        title{
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Tipus de lletra per al títol */
-            color: rgb(130, 123, 123); /* Color de text per al títol */
-        }
-        .container{
-            position: relative; /* Posició relativa */
-            z-index: 1; /* Índex Z */
-            background-color: #fff; /* Color de fons */
-            border-radius: 15px; /* Radi de la vora arrodonida */
-            display: flex; /* Configuració de visualització en flexbox */
-            flex-direction: column; /* Direcció de les caixes en columna */
-            align-items: center; /* Alineació dels elements al centre vertical */
-            width: 350px; /* Amplada */
-            height: 700px; /* Alçada */
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Ombra */
-            background-color: #00000068; /* Color de fons amb transparència */
-        }
-        .container .tit{
-            font-size: 26px; /* Mida de la font del títol */
-            margin: 65px auto 70px auto; /* Marges del títol */
-        }
-        .container input{
-            width: 280px; /* Amplada dels camps d'entrada */
-            height: 30px; /* Alçada dels camps d'entrada */
-            text-indent: 8px; /* Indentació del text dins dels camps d'entrada */
-            border: none; /* Sense vora */
-            border-bottom: 1px solid #ddd; /* Vora inferior */
-            outline: none; /* Sense contorn */
-            margin: 12px auto; /* Marges dels camps d'entrada */
-        }
-        .container button{
-            width: 280px; /* Amplada dels botons */
-            height: 40px; /* Alçada dels botons */
-            margin: 35px auto 40px auto; /* Marges dels botons */
-            border: none; /* Sense vora */
-            background: linear-gradient(-200deg,#797979,#d7e5ff); /* Fons del botó amb degradat */
-            color: #d6d6d6; /* Color de text del botó */
-            font-weight: bold; /* Pes de la font negreta */
-            letter-spacing: 8px; /* Espaiat de lletres */
-            border-radius: 10px; /* Radi de la vora arrodonida */
-            cursor: pointer; /* Cursor de ratolí apuntador */
-            transition: 0.5s; /* Transició d'animació */
-        }
-        .container button:hover{
-            background: linear-gradient(-200deg,#aac2ee,#fac0e7); /* Fons del botó amb degradat al passar el ratolí */
-            animation: animation 1s infinite; /* Animació al passar el ratolí */
-            background-position-x: -280px; /* Posició del fons */
-        }
-        .container span{
-            font-size: 14px; /* Mida de la font dels elements SPAN */
-        }
-        .container a{
-            color: rgb(136, 136, 139); /* Color dels enllaços */
-            text-decoration: none; /* Sense subratllat */
-        }
+    <head>
+        <title> ATNIMO </title> <!-- Títol de la pàgina -->
+        <meta charset="UTF-8"> <!-- Codificació de caràcters -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuració de la visualització en diversos dispositius -->
+        <link rel="stylesheet" href="CSS-Settings.css"> <!-- Enllaç a fitxers externs (en aquest cas CSS) -->
+        <style> 
+        /* Estil de CSS intern */
+            *{ /* Estil aplicat a tots els elements */
+                font-family: 'Courier New', Courier, monospace; /* Tipus de lletra */
+                color: black; /* Color del text */
+                margin: 0; /* Marge */
+                padding: 0; /* Espai de padding */
+            }
+            body{
+                /* Estil del cos de la pàgina */
+                background-image: linear-gradient(135deg, #a2a2a2, #e9e9e9, #526b6b, #81a1a1, #969696, #433141, #738181, #c0d3d3, #dcfefe, #c2c6c6, #ffffff); /* Imatge de fons */
+                background-size: 500%; /* Mida de l'imatge de fons */
+                animation: animacion 5s ; /* Animació de fons */
+                display: flex; /* Estil d'exhibició flex */
+                align-items: center; /* Alineació vertical dels elements al centre */
+                justify-content: center; /* Alineació horitzontal dels elements al centre */
+            }
+            title{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Tipus de lletra del títol */
+                color: rgb(130, 123, 123); /* Color del títol */
+            }
+            .container{
+                /* Estil del contenidor */
+                position: relative; /* Posició relativa */
+                z-index: 1; /* Índex z per apilar elements */
+                background-color: #fff; /* Color de fons */
+                border-radius: 15px; /* Radi de la vora */
+                display: flex; /* Estil d'exhibició flex */
+                flex-direction: column; /* Direcció de flexió de columna */
+                align-items: center; /* Alineació vertical dels elements al centre */
+                width: 350px; /* Amplada */
+                height: 700px; /* Alçada */
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Ombra */
+                background-color: #00000068; /* Color de fons amb transparència */
+            }
+            .container .tit{
+                font-size: 26px; /* Mida de la font */
+                margin: 65px auto 70px auto; /* Marge superior, auto a l'horitzontal, marge inferior */
+            }
+            .container input{
+                /* Estil dels camps d'entrada */
+                width: 280px; /* Amplada */
+                height: 30px; /* Alçada */
+                text-indent: 8px; /* Sagnat del text */
+                border: none; /* Cap vora */
+                border-bottom: 1px solid #ddd; /* Vora inferior */
+                outline: none; /* No ressaltar */
+                margin: 12px auto; /* Marge */
+            }
+            .container button{
+                /* Estil del botó */
+                width: 280px; /* Amplada */
+                height: 40px; /* Alçada */
+                margin: 35px auto 40px auto; /* Marge */
+                border: none; /* Cap vora */
+                background: linear-gradient(-200deg,#797979,#d7e5ff); /* Degradat de fons */
+                color: #d6d6d6; /* Color del text */
+                font-weight: bold; /* Pes de la font */
+                letter-spacing: 8px; /* Espaiat de les lletres */
+                border-radius: 10px; /* Radi de la vora */
+                cursor: pointer; /* Cursor */
+                transition: 0.5s; /* Transició */
+            }
+            .container button:hover{
+                /* Estil del botó al passar el ratolí per sobre */
+                background: linear-gradient(-200deg,#aac2ee,#fac0e7); /* Degradat de fons */
+                animation: animation 1s infinite; /* Animació */
+                background-position-x: -280px; /* Posició de fons */
+            }
+            .container span{
+                font-size: 14px; /* Mida de la font */
+            }
+            .container a{
+                color: rgb(136, 136, 139); /* Color dels enllaços */
+                text-decoration: none; /* Sense subratllat */
+            }
 
-        @keyframes animacion {  
-            0%{
-                background-position: 0%, 50%;
+            @keyframes animacion {  
+                /* Definició de l'animació */
+                0%{
+                    background-position: 0%, 50%; /* Posició de fons inicial */
+                }
+                50%{
+                    background-position: 100%, 50%; /* Posició de fons a la meitat */
+                }
+                100%{
+                    background-position: 0%, 50%; /* Posició de fons final */
+                }
             }
-            50%{
-                background-position: 100%, 50%;
-            }
-            100%{
-                background-position: 0%, 50%;
-            }
-        }
 
-    </style>
-</head>
-<body>
-    <div class="container" >
-        <div class="tit">Log in</div> <!-- Títol de secció -->
-        <input type="text" placeholder="Your account"> <!-- Camp d'entrada per al compte d'usuari -->
-        <input type="password" placeholder="Password"> <!-- Camp d'entrada per a la contrasenya -->
-        
-        <a href="Pagina principal.html">
-            <button>Log in</button> <!-- Botó per iniciar sessió -->
-        </a>
-        <span>Forget the password?<a href="#"> Click here<a></span><br> <!-- Enllaç per recuperar la contrasenya -->
-        <span>Don't have an account yet? <a>Sign up!</a></span> <!-- Enllaç per crear un compte -->
-        <a href="Pagina principal.html">
-            <button>Continue without account</button> <!-- Botó per continuar sense un compte -->
-        </a>
-        
-    </div>
-</body>
+        </style>
+    </head>
+    <body>
+        <div class="container" >
+            <div class="tit">Log in</div> <!-- Títol del formulari -->
+            <input type="text" placeholder="Your account"> <!-- Camp d'entrada per al nom d'usuari -->
+            <input type="password" placeholder="Password"> <!-- Camp d'entrada per a la contrasenya -->
+            
+            <a href="02.Pagina principal.html">
+                <button >Log in</button> <!-- Botó d'inici de sessió -->
+            </a>
+            <span>Forget the password?<a href="#"> Click here<a></span><br> <!-- Enllaç per a la recuperació de contrasenya -->
+            <span>Don't have an account yet? <a>Sign up!</a></span> <!-- Enllaç per a registrar-se -->
+            <a href="02.Pagina principal.html">
+                <button >Continue without account</button> <!-- Botó per a continuar sense registrar-se -->
+            </a>
+            
+        </div>
+    </body>
 </html>
