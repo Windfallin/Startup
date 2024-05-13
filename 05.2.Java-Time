@@ -1,0 +1,72 @@
+// Objecte que mapeja els estats emocionals amb emojis corresponents
+var estadoEmoji = {
+    feliz: "😊",
+    triste: "😢",
+    enojado: "😡"
+};
+
+var estadoActual = ""; // Variable per emmagatzemar l'estat emocional actual
+var emojiSeleccionado = ""; // Emoji seleccionat
+
+// Funció per canviar l'estat emocional i l'emoji seleccionat
+function cambiarEstado() {
+    var select = document.getElementById("Estatus");
+    var selectedOption = select.options[select.selectedIndex];
+    estadoActual = selectedOption.value;
+    emojiSeleccionado = estadoEmoji[estadoActual];
+}
+
+// Funció per enviar el missatge en prémer la tecla Enter
+function enviarConEnter(event) {
+    if (event.keyCode === 13) {
+        enviarMensaje();
+    }
+}
+
+// Funció per enviar el missatge
+function enviarMensaje() {
+    var mensaje = document.getElementById('chatInput').value.trim();
+    if (mensaje !== "") {
+        mostrarMensaje(mensaje, estadoActual, emojiSeleccionado);
+        document.getElementById('chatInput').value = '';
+    }
+}
+
+// Funció per mostrar el missatge al xat
+function mostrarMensaje(mensaje, estado, emoji) {
+    var nuevoMensajeContainer = document.createElement('div'); // Crear un contenedor per al missatge i l'estat
+    nuevoMensajeContainer.classList.add('mensaje-container');
+
+    var emojiSpan = document.createElement('span'); // Crear un element per a l'emoji
+    emojiSpan.textContent = emoji;
+    emojiSpan.classList.add('emoji'); // Afegir una classe per donar estil a l'emoji
+
+    var nuevoMensaje = document.createElement('div'); // Crear un element per al missatge
+    nuevoMensaje.textContent = mensaje;
+    nuevoMensaje.classList.add('mensaje-box');
+
+    var tiempoEnviado = document.createElement('span'); // Crear un element per al temps d'enviament
+    tiempoEnviado.classList.add('tiempo-transcurrido');
+    tiempoEnviado.textContent = obtenerTiempoActual();
+
+    nuevoMensajeContainer.appendChild(emojiSpan); // Afegir l'emoji al contenedor
+    nuevoMensajeContainer.appendChild(nuevoMensaje); // Afegir el missatge al contenedor
+    nuevoMensajeContainer.appendChild(tiempoEnviado); // Afegir el temps al contenedor
+
+    var contenedorMensajes = document.getElementById('mensajes');
+    contenedorMensajes.appendChild(nuevoMensajeContainer); // Afegir el contenedor del missatge al contenedor de missatges
+}
+
+// Funció per obtenir el temps actual
+function obtenerTiempoActual() {
+    var now = new Date();
+    var day = now.getDate();
+    var month = now.getMonth() + 1;
+    var hour = now.getHours();
+    var minutes = now.getMinutes();
+
+    minutes = (minutes < 10 ? "0" : "") + minutes;
+
+    var tiempo = day + "/" + month + " " + hour + ":" + minutes;
+    return tiempo;
+}
