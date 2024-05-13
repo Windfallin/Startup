@@ -1,0 +1,26 @@
+<!DOCTYPE html> <!-- Declaració del tipus de document -->
+<html>
+<head>
+    <meta charset="UTF-8"> <!-- Codificació de caràcters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuració de la visualització en dispositius mòbils -->
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Enllaç al fitxer CSS -->
+    <script src="javatime.js"></script> <!-- Enllaç al fitxer JavaScript per al temps -->
+    <script src="script.js"></script> <!-- Enllaç al fitxer JavaScript principal -->
+</head>
+<body>
+    <div class="container"> <!-- Contenidor principal -->
+        <div class="main"> <!-- Divisió principal -->
+            <div class="dropdown"> <!-- Desplegable -->
+                <select id="Estatus" onchange="cambiarEstado()"> <!-- Selecció de l'estat de ànim -->
+                    <option value="feliz" class="feliz">Feliz</option> <!-- Opció de estar feliç -->
+                    <option value="triste" class="triste">Triste</option> <!-- Opció d'estar trist -->
+                    <option value="enojado" class="enojado">Enojado</option> <!-- Opció d'estar enuigat -->
+                </select>
+            </div>
+            <input type="text" id="chatInput" onkeypress="enviarConEnter(event)"> <!-- Entrada de missatges -->
+            <button onclick="enviarMensaje()">Enviar</button> <!-- Botó per a enviar el missatge -->
+            <div id="mensajes"></div> <!-- Contenedor de missatges -->
+        </div>
+    </div>
+</body>
+</html>
