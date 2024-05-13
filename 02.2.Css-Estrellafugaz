@@ -1,0 +1,124 @@
+body {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); /* Fons amb degradat radial */
+    height: 100vh; /* Alçada al 100% de la finestra visible */
+    overflow: hidden; /* Oculta l'overflow per evitar l'escorreguda */
+    display: flex; /* Utilitza el model flexbox per alineació centrada */
+    font-family: "Anton", sans-serif; /* Tipus de lletra */
+    justify-content: center; /* Centra horitzontalment */
+    align-items: center; /* Centra verticalment */
+}
+
+.night {
+    position: relative; /* Posició relativa per al div .night */
+    width: 100%; /* Amplada del 100% */
+    height: 200%; /* Alçada del 200% per assegurar-se que cobreixi tota la pantalla */
+    transform: rotateZ(139deg); /* Rotació en Z per a un efecte de perspectiva */
+}
+
+.shooting_star {
+    position: absolute; /* Posició absoluta per a les estrelles */
+    left: 50%; /* Centrat a l'horitzontal */
+    top: 50%; /* Centrat a la vertical */
+    height: 2px; /* Alçada de les estrelles */
+    background: linear-gradient(-45deg, #5f91ff, rgb(136, 136, 248), #6f9dd2, #b0bae9,#f4f8fd); /* Color del gradient de les estrelles */
+    border-radius: 999px; /* Radi de les estrelles */
+    filter: drop-shadow(6px 0px 10px #00f7ff); /* Ombra */
+    animation: tail 3000ms ease-in-out , shooting 3000ms ease-in-out ; /* Animació de la cua i del moviment de les estrelles */
+}
+
+.shooting_star::before {
+    content: ""; /* Afegim contingut buit, ja que aquests pseudoelements requereixen un valor de contingut */
+    position: absolute; /* Els pseudoelements són elements absolutament posicionats dins del seu pare */
+    top: calc(50% - 1px * 2); /* Posiciona l'element a la meitat de l'alçada de .shooting_star */
+    right: 0; /* Posiciona a la dreta de .shooting_star */
+    height: 2px; /* Alçada de l'element */
+    background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0)); /* Gradient per a l'efecte de brillantor */
+    transform: translateX(50%) rotateZ(45deg); /* Rotació de l'element */
+    border-radius: 100%; /* Borde arrodonit per a l'efecte de brillantor */
+    animation: shining 3000ms ease-in-out infinite; /* Animació de l'efecte de brillantor */
+}
+
+.shooting_star::after {
+    /* El mateix estil que ::before, però fa funció de rotació */
+}
+
+.shooting_star:nth-child(1) {
+    top: calc(50% - -4px * 2);
+    left: calc(50% - 248px);
+    -webkit-animation-delay: 3060ms;
+    animation-delay: 3060ms;
+  }
+  
+  .shooting_star:nth-child(1)::before,
+  .shooting_star:nth-child(1)::after {
+    -webkit-animation-delay: 3060ms;
+    animation-delay: 3060ms;
+  }
+
+/* Una estrella --- Hi ha 21 en total --- Cadascuna té una duració diferent i una posició diferent */
+
+/* Animació per la cua de l'estrella fugaç */
+@-webkit-keyframes tail {
+  0% {
+    width: 0;
+    background-position: 0%, 50%; /* Comença amb una amplada de zero i posició de fons específica */
+  }
+
+  30% {
+    width: 100px; /* Fa la cua més llarga */
+    background-position: 50%, 75%; /* Mou la posició del fons */
+  }
+
+  100% {
+    width: 0; /* Torna a zero, desapareixent la cua */
+    background-position: 75%, 100%; /* Mou la posició del fons */
+  }
+}
+
+/* Animació per al resplendor de l'estrella fugaç */
+@-webkit-keyframes shining {
+  0% {
+    width: 0px; /* Comença sense brillant */
+  }
+  25%{
+    width: 15px; /* El brillant comença a créixer */
+  }
+  50% {
+    width: 30px; /* Brilla al màxim */
+  }
+  75% {
+    width: 50px; /* Màxima intensitat del brillant */
+  }
+  90%{
+    width: 30px; /* Reducció del brillant */
+  }
+  100%{
+    width: 15px; /* Retorna al brillant inicial */
+  }
+}
+
+/* Animació per al moviment de l'estrella fugaç */
+@-webkit-keyframes shooting {
+  0% {
+    transform: translateX(0); /* Comença des de la posició inicial */
+  }
+
+  100% {
+    transform: translateX(300px); /* Es mou 300px a la dreta */
+  }
+}
+
+/* Animació per al moviment del cel */
+@-webkit-keyframes sky {
+  0% {
+    transform: rotate(45deg); /* Comença amb una rotació de 45 graus */
+  }
+
+  100% {
+    transform: rotate(405deg); /* Gira fins a una rotació de 405 graus */
+  }
+}
+
+/* Les keyframes no les he posat ja que fan ho mateix del que fan les webkit-keyframes */
+
+
