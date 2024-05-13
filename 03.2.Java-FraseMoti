@@ -1,0 +1,23 @@
+// Array que conté diverses frases motivadores
+var phrases = [
+    "¡El éxito está a la vuelta de la esquina!",
+    "Cada día es una nueva oportunidad para triunfar.",
+    "Nunca es tarde para empezar a perseguir tus sueños.",
+    "Tu esfuerzo dará sus frutos. ¡Sigue adelante!"
+];
+
+// Funció per seleccionar una frase aleatòria de l'array
+function getRandomPhrase() {
+    return phrases[Math.floor(Math.random() * phrases.length)];
+}
+
+// Funció per mostrar la frase motivadora a la pàgina
+function displayMotivationalQuote() {
+    // Obtenim l'element HTML on volem mostrar la frase motivadora
+    var motivationElement = document.getElementById('motivation');
+    // Assignem el contingut de l'element amb una frase aleatòria
+    motivationElement.textContent = getRandomPhrase();
+}
+
+// Mostrar una frase motivadora quan la pàgina es carrega
+window.onload = displayMotivationalQuote;
