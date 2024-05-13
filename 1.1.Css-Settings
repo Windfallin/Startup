@@ -1,0 +1,51 @@
+body {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); /* Fons amb degradat radial */
+    height: 100vh; /* Alçada al 100% de la finestra visible */
+    overflow: hidden; /* Overflow ocult */
+    display: flex; /* Estil d'exhibició flex */
+    font-family: "Anton", sans-serif; /* Tipus de lletra */
+    justify-content: center; /* Centrat horitzontalment */
+    align-items: center; /* Centrat verticalment */
+}
+
+h1{
+    position: relative; /* Posició relativa */
+    font-family:'Courier New', Courier, monospace; /* Tipus de lletra */
+    font-size: 64px; /* Mida de la font */
+    left: 70px; /* Distància del marge esquerre */
+    top: 200px; /* Distància des del límit superior */
+    animation: aparecer 15000ms ease-in-out forwards; /* Animació de l'aparició */
+    opacity: 75%; /* Opacitat */
+}
+
+.selection {
+    animation: aparecer 7000ms ease-in-out forwards; /* Animació de l'aparició */
+    position: absolute; /* Posició absoluta */
+    top: 20px; /* Distància des del límit superior */
+    right: 20px; /* Distància del marge dret */
+    z-index: 999; /* Índex z */
+}
+
+@keyframes aparecer{ /* Animacions */
+    0%{
+        opacity: 0%; /* Opacitat inicial */
+    }
+    75%{
+        opacity: 100%; /* Opacitat al 75% */
+    }
+    100%{
+        opacity: 75%; /* Opacitat al 75% al final de l'animació */
+    }
+}
+
+@keyframes animacion{
+    0%{
+        background-position: 0%, 50%; /* Posició de fons inicial */
+    }
+    50%{
+        background-position: 100%, 50%; /* Posició de fons al 50% */
+    }
+    100%{
+        background-position: 0%, 50%; /* Posició de fons al final */
+    }
+}
